@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:todo_flutter/screens/home.dart';
 
 void main() {
@@ -11,10 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));//setting the phone nav color to match tha apps nav color
+    return MaterialApp(
       title: 'ToDo App',
-      home: Home()
-
+      home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
